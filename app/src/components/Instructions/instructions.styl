@@ -1,0 +1,23 @@
+/*
+ * Vars
+ */
+$number-color = #ddd
+$instruction-color = #333
+
+.instruction
+	position: relative
+	margin: 4em 0
+	color: $instruction-color
+
+	&::before
+		counter-increment: instruction
+		content: counter(instruction)
+		position: absolute
+		top: -0.4em
+		left: -0.8em
+		font-size: 3em
+		color: $number-color
+
+#instructions
+	counter-reset: instruction
+	padding: 3em 5em

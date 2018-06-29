@@ -1,0 +1,36 @@
+/*
+ * vars
+ */
+
+/*
+ * Style
+ */
+#presentation
+	position: relative
+
+	&-image
+		display: block
+		width: 100%
+
+	&-content
+		position: absolute
+		bottom: 3em
+		left: 0
+		right: 0
+		text-align: center
+		color: #fff
+		text-shadow: 0 0 1em rgba(#000, .3)
+
+	&-title
+		font-size: 2em
+		text-transform: uppercase
+		margin-bottom: .3em
+
+	&-author
+	&-difficulty
+		display: inline-block
+
+	&-difficulty
+		&::before
+			content: "-"
+			margin: 0 1em

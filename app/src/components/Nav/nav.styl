@@ -1,0 +1,19 @@
+@require "app/styles/charte"
+
+.nav
+  padding: 2em
+
+  &-link
+    margin-bottom: 1em
+    display: block
+    position: relative
+    color: $link-color
+
+    &:hover, &--active
+      color: $link-color-active
+
+      &::before
+        content: "★"
+        position: absolute
+        left: -1em
+        top: 0
