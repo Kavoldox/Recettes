@@ -17,6 +17,7 @@ import App from 'src/components/App';
 const mapStateToProps = state => ({
   loaded: state.loaded,
   data: state.data,
+  backimage: state.image,
 });
 
 /**

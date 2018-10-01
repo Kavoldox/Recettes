@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import anime from 'animejs';
 
 /*
  * Local import
@@ -15,16 +16,76 @@ import Instructions from 'src/components/Instructions';
 /*
  * Code
  */
-const Recipe = ({ recipe }) => (
-  <div id="recipe">
-    <Presentation
-      name={recipe.name}
-      imageUrl={recipe.imageURL}
-    />
-    <Ingredients ingredients={recipe.ingredients} />
-    <Instructions instructions={recipe.steps} />
-  </div>
-);
+
+class Recipe extends React.Component {
+
+  state= {
+    ingredients: false,
+
+    instructions: false,
+  }
+
+  componentWillMount() {
+    this.setState({
+      ingredients: false,
+
+      instructions: false,
+    })
+  }
+
+  showContent = id => () => {
+    // const id = `#{id}`;
+
+    this.setState({
+      [id]: !this.state[id],
+    });
+
+    if (this.state[id]) {
+      return (
+        anime({
+          targets: `#${id}`,
+          translateY: '50em',
+          height: '100%',
+          duration: 1000,
+        }),
+        anime({
+          targets: `.icon-${id}`,
+          rotate: '180',
+          duration: 1000,
+        })
+      );
+    }
+    return (
+      anime({
+        targets: `#${id}`,
+        translateY: '-50em',
+        duration: 1000,
+        height: 0,
+      }),
+      anime({
+        targets: `.icon-${id}`,
+        rotate: '0',
+        duration: 1000,
+      })
+    );
+  }
+
+  render() {
+    const { recipe } = this.props;
+    return (
+      <div id="recipe">
+        <Presentation
+          name={recipe.name}
+          imageUrl={recipe.imageURL}
+        />
+        <div id="recipe-info">
+          <Ingredients showContent={this.showContent} ingredients={recipe.ingredients} />
+          <Instructions showContent={this.showContent} instructions={recipe.steps} />
+        </div>
+      </div>
+    )
+  }
+ }
 
 Recipe.propTypes = {
   recipe: PropTypes.object.isRequired,

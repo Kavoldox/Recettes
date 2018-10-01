@@ -8,36 +8,48 @@ import { Route } from 'react-router-dom';
 /**
  * Local import
  */
-import Nav from 'src/components/Nav';
+import Carousel from 'src/components/Carousel';
 import Home from 'src/components/Home';
 import Recipe from 'src/components/Recipe';
 import { recipeSlug } from 'src/utils/url';
+import Link from 'src/components/Link';
 
 /**
  * Code
  */
-const App = ({ loaded, data: recipesData }) => {
+const App = ({ backimage, loaded, data: recipesData }) => {
   if (!loaded) {
     return <div>Loading…</div>;
   }
   return (
-    <div id="app">
-      <div id="app-nav">
-        <Nav recipes={recipesData} />
-      </div>
+    <div
+      id="app"
+      style={{
+        background: `top/80% url(${backimage})`,
+      }}
+    >
+      <div id="scrollbar"/>
       <div id="app-main">
-        <Route exact path="/" component={Home} />
-        <Route
-          exact
-          path="/recipe/:slug"
-          render={
-            ({ match }) => {
-              const { slug } = match.params;
-              const recipe = recipesData.find(r => recipeSlug(r.name) === slug);
-              return <Recipe recipe={recipe} />;
+        <Link to="/">
+          <h1 id="app-main-title">Recipes</h1>
+        </Link>
+        <div id="app-main-pres">
+          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/recipe/:slug"
+            render={
+              ({ match }) => {
+                const { slug } = match.params;
+                const recipe = recipesData.find(r => recipeSlug(r.name) === slug);
+                return <Recipe recipe={recipe} />;
+              }
             }
-          }
-        />
+          />
+        </div>
+        <div id="app-main-carousel">
+          <Carousel recipes={recipesData} />
+        </div>
       </div>
     </div>
   );

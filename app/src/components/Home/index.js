@@ -12,8 +12,12 @@ import React from 'react';
  */
 const Home = () => (
   <div id="home">
-    <h1 id="home-title">Hello !</h1>
-    <p id="home-desc">Bienvenue, découvrez de merveilleuses recettes !</p>
+    <div id="home-block">
+        <div>
+          <h2 id="home-block-title">Hello !</h2>
+          <p id="home-block-desc">Bienvenue, découvrez de merveilleuses recettes !</p>
+        </div>
+    </div>
   </div>
 );
 

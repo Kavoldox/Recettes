@@ -1,16 +1,35 @@
 @require "app/styles/charte"
 
 #app
-	font-family: sans-serif
+  font-family: 'Fira Sans', sans-serif
 
-	&-nav
-		background-color: $nav-bg
-		border-right: 1px solid $nav-border
-		height: 100vh
-		position: fixed
-		width: 30%
-
-	&-main
-		background-color: $main-bg
-		margin-left: 30%
-		width: 70%
+  &-main
+    background:  linear-gradient(to top, rgba(20,20,20,1) 30%, rgba(20,20,20,0.9) 60%, rgba(20,20,20,0) 90%)
+    @media screen and (max-device-width: 600px)
+      background:  linear-gradient(to top, rgba(20,20,20,1) 60%, rgba(20,20,20,0.7) 80%, rgba(20,20,20,0.3) 90%, rgba(20,20,20,0.8) 100%)
+    &-title
+      float: left
+      color: #DFEC51
+      font-size: 2em
+      padding: 0.5em
+      font-family: 'Pacifico', cursive
+      @media screen and (max-device-width: 600px)
+        padding: 1em
+    &-pres
+      height: 100vh
+      padding: 8em 1em 1em 5em
+      background:  linear-gradient(to left, rgba(20,20,20,1) 25%, rgba(20,20,20,0) 45%, rgba(20,20,20,1) 90%)
+      @media screen and (max-device-width: 600px)
+        padding: 8em 3em
+        background: linear-gradient(to left, rgba(20,20,20,1) 20%, rgba(20,20,20,0) 35%, rgba(20,20,20,1) 100%)
+    &-carousel
+      position: fixed
+      top: 0
+      right: 5em
+      background: #14
+      @media screen and (max-device-width: 600px)
+        position: fixed
+        bottom: 0
+        top: auto
+        left: 0
+        right: auto

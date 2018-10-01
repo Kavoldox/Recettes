@@ -15,8 +15,6 @@ import { NavLink } from 'react-router-dom';
 const Link = ({ to, children }) => (
   <NavLink
     exact
-    className="nav-link"
-    activeClassName="nav-link--active"
     to={to}
   >
     {children}

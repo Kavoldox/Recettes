@@ -6,25 +6,16 @@
  * Style
  */
 #presentation
-	position: relative
 
-	&-image
-		display: block
-		width: 100%
-
-	&-content
-		position: absolute
-		bottom: 3em
-		left: 0
-		right: 0
-		text-align: center
-		color: #fff
-		text-shadow: 0 0 1em rgba(#000, .3)
-
-	&-title
-		font-size: 2em
-		text-transform: uppercase
-		margin-bottom: .3em
+  &-title
+    color: #fff
+    text-shadow: 0 0 1em rgba(#000, .3)
+    font-size: 8em
+    font-weight: bold
+    margin-right: 1em
+    @media screen and (max-device-width: 600px)
+      font-size: 7em
+      padding: 0.2em
 
 	&-author
 	&-difficulty

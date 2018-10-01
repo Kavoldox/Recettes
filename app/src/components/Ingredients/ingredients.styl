@@ -1,29 +1,70 @@
 /*
  * Vars
  */
-$gray = #777
-$gray-dark = #333
+$white = #FFF
+$green = #DFEC51
 
 /*
  * Classes
  */
 .ingredient
-	margin: 1em 0
-	text-align: center
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  margin: 0.5em 0
+  @media screen and (max-device-width: 600px)
+    padding: 0.2em
+    margin: 1em
+    max-width: 28%
+    line-height: 2.5em
 
-	&-quantity
-		color: $gray-dark
-		font-weight: 700
-		display: inline-block
-		margin-right: .2em
+  &-name
+    font-size: 1em
+    color: white
+    text-transform: capitalize
+    @media screen and (max-device-width: 600px)
+      font-size: 2em
 
-	&-name
-		color: $gray
-		display: inline-block
-
+  &-quantity
+    font-size: 2em
+    color: $green
+    margin: 0.5em 0
+    text-transform: capitalize
+    @media screen and (max-device-width: 600px)
+      font-size: 2.5em
 
 /*
  * IDs
  */
+#ingredient
+  padding: 3em 0 0
+  margin-right: 5em
+  @media screen and (max-device-width: 600px)
+    margin-right: 0
+
+  &-menu
+    display: flex
+    align-items: center
+
+  &-title
+    // width: 15%
+    font-size: 3em
+    color: white
+    margin-right: 0.5em
+    text-transform: uppercase
+    // border-bottom: 5px solid $green
+    @media screen and (max-device-width: 600px)
+      margin: 0.5em
+
 #ingredients
-	margin: 2em
+  position: relative
+  top: -50em
+  margin: 0.5em
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  justify-content: flex-start
+  overflow-y: hidden
+  height: 0
+  @media screen and (max-device-width: 600px)
+    flex-direction: row

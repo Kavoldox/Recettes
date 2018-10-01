@@ -16,9 +16,9 @@ const Presentation = ({
   imageUrl,
 }) => (
   <div id="presentation">
-    <img src={imageUrl} alt={name} id="presentation-image" />
     <div id="presentation-content">
-      <h1 id="presentation-title">{name}</h1>
+      <h2 id="presentation-title">{name}</h2>
+      {/* <img src={imageUrl} alt={name} id="presentation-image" /> */}
     </div>
   </div>
 );
