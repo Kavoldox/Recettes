@@ -9,7 +9,6 @@ Application avec React-Router pour présenter dans chaque page une recette de cu
 
 ### Librairies utilisées
 
-Pour ce challenge, on pourrait utiliser :
 * `react-router` pour s'organiser en pages.
 * `redux` pour organiser les données.
 * `react-redux` pour connecter nos composants à nos données.
