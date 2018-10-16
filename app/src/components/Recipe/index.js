@@ -46,12 +46,14 @@ class Recipe extends React.Component {
           targets: `#${id}`,
           translateY: '50em',
           height: '100%',
-          duration: 1000,
+          duration: 500,
+          easing: 'easeInOutQuart',
         }),
         anime({
           targets: `.icon-${id}`,
           rotate: '180',
-          duration: 1000,
+          duration: 500,
+          easing: 'easeInOutQuart',
         })
       );
     }
@@ -59,13 +61,15 @@ class Recipe extends React.Component {
       anime({
         targets: `#${id}`,
         translateY: '-50em',
-        duration: 1000,
+        duration: 500,
         height: 0,
+        easing: 'easeInOutQuart',
       }),
       anime({
         targets: `.icon-${id}`,
         rotate: '0',
-        duration: 1000,
+        duration: 500,
+        easing: 'easeInOutQuart',
       })
     );
   }

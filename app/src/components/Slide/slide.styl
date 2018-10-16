@@ -5,14 +5,26 @@
   display: flex
   flex-direction: column
   justify-content: space-between
-  @media screen and (max-device-width: 600px)
+  @media screen and (max-device-width: 768px)
     width: 20vw
-    height: 15vh
+    height: 17vh
+  @media screen and (min-device-width: 769px) and (max-device-width: 1024px)
+    width: 20vw
+    height: 20vh
+    justify-content: space-between
+    margin: 0.2em
   &-name
     font-size: 2em
     padding: 0.5em 0.5em 1.5em
     color: white
     background:  linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)
+    @media screen and (max-device-width: 768px)
+      font-size: 2.2em
+      padding: 0.5em 0.5em 0
+      background:  linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 80%,rgba(0,0,0,0) 100%)
+    @media screen and (min-device-width: 769px) and (max-device-width: 1024px)
+      padding: 0.2em 0.5em
+      font-size: 1.5em
   &-link
     width: 30%
     padding: 0.5em 1em
@@ -23,15 +35,23 @@
     color: white
     border-radius: 3px
     background: linear-gradient(to top, #DFEC51, #73AA0A)
-    @media screen and (max-device-width: 600px)
+    @media screen and (max-device-width: 768px)
       font-size: 2em
       align-self: center
-      margin: 1em
+      margin: 0.5em auto
+      float: none
+      width: 70%
+    @media screen and (min-device-width: 769px) and (max-device-width: 1024px)
+      width: 50%
+      margin: 0.5em
 .slide-active
   width: 25em
   height: 15em
   border: 5px solid
   border-image: linear-gradient(#DFEC51, #73AA0A) 70;
-  @media screen and (max-device-width: 600px)
-    width: 35vw
-    height: 17vh
+  @media screen and (max-device-width: 768px)
+    width: 28vw
+    height: 20vh
+  @media screen and (min-device-width: 769px) and (max-device-width: 1024px)
+    width: 24vw
+    height: 24vh

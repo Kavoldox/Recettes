@@ -43,8 +43,6 @@ goToPrevSlide = (e) => {
   this.setState({
     recipes: slides,
   });
-
-  console.log(this.state.recipes)
 }
 
 // handleMouse = (e) => {
@@ -59,6 +57,9 @@ goToPrevSlide = (e) => {
 render() {
    const { width } = this.state;
    const isMobile = width <= 500;
+   // const filter = this.state.recipes.filter((data, index) => i.indexOf(index) < 3);
+
+   // console.log(filter)
    return (
       <div className="carousel">
         <div
@@ -75,7 +76,7 @@ render() {
             //   transition: 'transform ease-out 0.7s'
             // }}
             >
-            {this.state.recipes.map((data, index) => (
+            {this.state.recipes.slice(0,3).map((data, index) => (
               <Slide
                 key={data.name}
                 index={index}

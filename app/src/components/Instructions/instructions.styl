@@ -12,9 +12,13 @@ $instruction-color = #FFF
   line-height: 1.5em
   color: $instruction-color
   width: 20%
-  @media screen and (max-device-width: 600px)
+  @media screen and (max-device-width: 768px)
     font-size: 2em
     width: 28%
+  @media screen and (min-device-width: 769px) and (max-device-width: 1024px)
+    width: 40%
+    padding: 3em 0 0
+    margin: 0 0.5em
 
   &::before
     counter-increment: instruction
@@ -23,20 +27,28 @@ $instruction-color = #FFF
     top: 0.5em
     font-size: 2.5em
     color: $number-color
+    @media screen and (min-device-width: 769px) and (max-device-width: 1024px)
+      font-size: 2em
 
 .title-icon
   color: $number-color
   font-size: 3em
+  @media screen and (min-device-width: 769px) and (max-device-width: 1024px)
+    font-size: 2em
 
 #instruction
   padding: 3em 0
-  @media screen and (max-device-width: 600px)
-    padding:0 0 25em
+  @media screen and (max-device-width: 768px)
+    padding:0 0 35em
 
   &-menu
     display: flex
     align-items: center
     width: 80%
+    padding: 1em
+    border-top: 3px solid #DFEC51
+    @media screen and (max-device-width: 768px)
+      width: 50%
 
   &-title
     // width: 15%
@@ -45,8 +57,10 @@ $instruction-color = #FFF
     color: white
     text-transform: uppercase
     // border-bottom: 5px solid $number-color
-    @media screen and (max-device-width: 600px)
+    @media screen and (max-device-width: 768px)
       margin: 0.5em
+    @media screen and (min-device-width: 769px) and (max-device-width: 1024px)
+      font-size: 1.5em
 
 #instructions
   position: relative
